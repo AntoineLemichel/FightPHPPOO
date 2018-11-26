@@ -3,6 +3,7 @@
 declare(strict_types=1);
 class Person
 {
+    protected $id;
     protected $name;
     protected $domage;
 
@@ -32,6 +33,16 @@ class Person
     }
 
     /**
+     * Getters for ID.
+     *
+     * @return self
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Getters for name.
      *
      * @return self
@@ -49,6 +60,23 @@ class Person
     public function getDomage()
     {
         return $this->domage;
+    }
+
+    /**
+     * Setters for id.
+     *
+     * @param string $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $id = (int) $id;
+        if (is_numeric($id)) {
+            $this->id = $id;
+
+            return $this;
+        }
     }
 
     /**
