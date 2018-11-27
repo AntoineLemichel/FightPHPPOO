@@ -5,7 +5,7 @@ class Person
 {
     protected $id;
     protected $name;
-    protected $domage;
+    protected $damage;
 
     /**
      * Construct for class Person.
@@ -22,7 +22,7 @@ class Person
      *
      * @param array $array
      */
-    public function hydrate(array $array)
+    public function hydrate(array $data)
     {
         foreach ($data as $key => $value) {
             $method = 'set'.ucfirst($key);
@@ -53,13 +53,13 @@ class Person
     }
 
     /**
-     * Getters for domage.
+     * Getters for damage.
      *
      * @return self
      */
-    public function getDomage()
+    public function getDamage()
     {
-        return $this->domage;
+        return $this->damage;
     }
 
     /**
@@ -96,18 +96,18 @@ class Person
     }
 
     /**
-     * Setters for domage.
+     * Setters for damage.
      *
-     * @param string $domage
+     * @param string $damage
      *
      * @return self
      */
-    public function setDomage($domage)
+    public function setDamage($damage)
     {
-        $domage = (int) $domage;
+        $damage = (int) $damage;
 
-        if (is_numeric($domage)) {
-            $this->domage = $domage;
+        if (is_numeric($damage)) {
+            $this->damage = $damage;
 
             return $this;
         }
